@@ -1,0 +1,131 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AtithiStay</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/home.css">
+
+    <!-- Font Awesome (instead of react-icons) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="root">
+<div class="hero">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <h2 class="logo">AtithiStay</h2>
+
+        <ul>
+            <li onclick="scrollToSection('home')">Home</li>
+            <li onclick="scrollToSection('about')">About</li>
+            <li onclick="scrollToSection('rooms')">Our Rooms</li>
+            <li onclick="scrollToSection('facilities')">Facilities</li>
+            <li onclick="scrollToSection('gallery')">Gallery</li>
+            <li onclick="scrollToSection('contact')">Contact</li>
+        </ul>
+
+        <button class="nav-login-btn"
+                onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/login.jsp'">
+            Login
+        </button>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <div id="home" class="hero-content">
+        <div class="left">
+            <h1>Enjoy A Luxury Experience</h1>
+            <p>Experience comfort and elegance in the heart of the city.</p>
+            <button class="visit-btn">Visit Us</button>
+        </div>
+
+        <!-- BOOKING CARD -->
+        <div class="booking-card">
+            <h2>Book A Room</h2>
+
+            <form action="checkAvailability" method="post">
+                <div class="date-row">
+                    <div class="field">
+                        <label>Check In Date</label>
+                        <input type="date" name="checkin">
+                    </div>
+                    <div class="field">
+                        <label>Check Out Date</label>
+                        <input type="date" name="checkout">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Adults</label>
+                    <select name="adults">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label>Child</label>
+                        <select name="child">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Room</label>
+                        <select name="room">
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="check-btn">CHECK AVAILABILITY</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ================= FACILITIES ================= -->
+<section id="facilities" class="explore">
+    <span class="explore-tag">Experience</span>
+    <h2 class="explore-heading">Our Hospitality</h2>
+
+    <div class="explore-grid">
+        <div class="explore-card">
+            <i class="fa-solid fa-bed explore-icon"></i>
+            <h3>Quality Room</h3>
+            <p>Comfortable, clean, and fully equipped rooms.</p>
+        </div>
+
+        <div class="explore-card">
+            <i class="fa-solid fa-umbrella-beach explore-icon"></i>
+            <h3>Private Beach</h3>
+            <p>Peaceful private beach with scenic views.</p>
+        </div>
+
+        <div class="explore-card">
+            <i class="fa-solid fa-spa explore-icon"></i>
+            <h3>Wellness & Spa</h3>
+            <p>Relaxing spa and wellness treatments.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="footer">
+    <div class="footer-bottom">
+        © 2026 AtithiStay Hotel. All rights reserved.
+    </div>
+</footer>
+
+<script src="<%=request.getContextPath()%>/js/home.js"></script>
+</div>
+</body>
+</html>

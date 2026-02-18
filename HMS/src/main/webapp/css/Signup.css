@@ -1,0 +1,107 @@
+/* PAGE LAYOUT */
+.signup-page {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* LEFT PANEL */
+.signup-left {
+  flex: 1;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signup-left h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.signup-left p {
+  max-width: 420px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.view-btn {
+  width: 160px;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: #fff;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* RIGHT PANEL */
+.signup-right {
+  flex: 1;
+  background: #f7f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-card {
+  background: #fff;
+  padding: 40px;
+  width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.signup-card h2 {
+  margin-bottom: 25px;
+}
+
+/* INPUTS */
+.signup-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  background: #6f472d;
+}
+
+/* LOGIN LINK */
+.login-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-link span {
+  color: #4a6cf7;
+  cursor: pointer;
+  font-weight: 600;
+}

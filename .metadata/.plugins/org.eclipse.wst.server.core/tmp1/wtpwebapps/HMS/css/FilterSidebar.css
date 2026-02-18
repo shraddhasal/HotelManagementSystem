@@ -1,0 +1,66 @@
+
+  .filter-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: #f6f2ee;
+  padding: 20px;
+}
+
+
+.filter-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.filter-group {
+  margin-bottom: 30px;
+}
+
+.filter-group h4 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* ROOM TYPE BUTTONS */
+.type-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.type-buttons button {
+  padding: 8px 14px;
+  border: 1px solid #8b5e3c;
+  background: transparent;
+  color: #8b5e3c;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.type-buttons button.active,
+.type-buttons button:hover {
+  background: #8b5e3c;
+  color: #fff;
+}
+
+/* PRICE */
+.price-text {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* CHECKBOX */
+.checkbox {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.checkbox input {
+  margin-right: 8px;
+}

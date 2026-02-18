@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%
+    String userName = (String) session.getAttribute("userName");
+    if (userName == null) {
+        response.sendRedirect(request.getContextPath() + "/jsp/user/login.jsp");
+        return;
+    }
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookings | AtithiStay</title>
+
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/mybookings.css">
+
+    <!-- Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<jsp:include page="/jsp/common/navbar.jsp" />
+
+<div class="mybookings-page">
+
+    <div class="mybookings-header">
+        <h1>My Bookings</h1>
+        <p>Manage your hotel reservations with ease</p>
+    </div>
+
+    <div class="bookings-container">
+
+        <!-- BOOKING -->
+        <div class="booking-card">
+
+            <div class="booking-left">
+                <h3>Deluxe Double Room</h3>
+                <p class="location">📍 Pune, Maharashtra</p>
+                <p>Check-in: <b>20 Feb 2026</b></p>
+                <p>Check-out: <b>22 Feb 2026</b></p>
+                <p>Guests: 2 Adults, 1 Child</p>
+            </div>
+
+            <div class="booking-right">
+                <span class="status confirmed">CONFIRMED</span>
+                <div class="price">₹ 8,400</div>
+                <button class="cancel-btn">Cancel Booking</button>
+            </div>
+
+        </div>
+
+        <!-- BOOKING -->
+        <div class="booking-card">
+
+            <div class="booking-left">
+                <h3>Superior Balcony Room</h3>
+                <p class="location">📍 Mumbai</p>
+                <p>Check-in: <b>10 Mar 2026</b></p>
+                <p>Check-out: <b>12 Mar 2026</b></p>
+                <p>Guests: 2 Adults</p>
+            </div>
+
+            <div class="booking-right">
+                <span class="status cancelled">CANCELLED</span>
+                <div class="price">₹ 6,200</div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

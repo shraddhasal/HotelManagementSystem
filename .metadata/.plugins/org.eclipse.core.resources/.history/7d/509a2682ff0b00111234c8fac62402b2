@@ -1,0 +1,61 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.6)
+  );
+}
+
+/* Navbar links */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar li {
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar li:hover {
+  background: white;
+  color: #8b5e3c;
+}
+
+/* Login button */
+.nav-login-btn {
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 140px;   /* 🔥 keeps layout stable */
+}
+
+.welcome-text {
+  color: white;
+  font-size: 14px;
+}

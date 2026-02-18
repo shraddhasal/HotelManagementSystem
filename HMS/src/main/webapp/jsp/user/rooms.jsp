@@ -1,0 +1,161 @@
+<%@ page import="java.util.*" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%
+List<Map<String,String>> rooms =
+    (List<Map<String,String>>) request.getAttribute("availableRooms");
+
+if (rooms != null && !rooms.isEmpty()) {
+  for (Map<String,String> room : rooms) {
+%>
+
+<div class="room-horizontal-card">
+  <div class="room-details">
+    <h3><%= room.get("name") %></h3>
+    <p>Type: <%= room.get("type") %></p>
+    <p>₹<%= room.get("price") %> / night</p>
+    <button class="book-now-btn">Book Now</button>
+  </div>
+</div>
+
+<%
+  }
+} else {
+%>
+ 
+<%
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Rooms</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/css/Rooms.css">
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/css/FilterSidebar.css">
+</head>
+
+<body>
+
+<div class="rooms-page">
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="rooms-header">
+    <h1>Our Rooms</h1>
+    <p>
+      Choose from our wide range of luxury rooms and suites designed for
+      comfort, elegance, and relaxation.
+    </p>
+  </section>
+
+  <!-- ===== LOCATIONS ROW ===== -->
+  <div class="locations-row">
+
+    <div class="loc-item">
+      <span class="loc-text">Bangalore <span class="arrow">▼</span></span>
+      <div class="loc-dropdown">
+        <p>Indiranagar</p>
+        <p>Whitefield</p>
+        <p>Koramangala</p>
+        <p>Electronic City</p>
+        <p>MG Road</p>
+      </div>
+    </div>
+
+    <div class="loc-item">
+      <span class="loc-text">Chennai <span class="arrow">▼</span></span>
+      <div class="loc-dropdown">
+        <p>T Nagar</p>
+        <p>Anna Nagar</p>
+        <p>Velachery</p>
+        <p>OMR</p>
+        <p>Tambaram</p>
+      </div>
+    </div>
+
+    <span>Delhi</span>
+    <span>Gurgaon</span>
+    <span>Hyderabad</span>
+    <span>Kolkata</span>
+    <span>Mumbai</span>
+    <span>Pune</span>
+    <span>Noida</span>
+  </div>
+
+  <!-- ===== MAIN LAYOUT ===== -->
+  <div class="rooms-layout">
+
+    <!-- FILTER SIDEBAR -->
+    <%@ include file="filterSidebar.jsp" %>
+
+    <!-- ===== ROOMS LIST ===== -->
+    <section class="rooms-list">
+
+      <div class="room-horizontal-card">
+
+        <!-- LEFT IMAGE -->
+        <div class="room-image">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Room">
+        </div>
+
+        <!-- DETAILS -->
+        <div class="room-details">
+
+          <div class="room-title">
+            Super Townhouse Ulsoor Near Halasuru Metro
+          </div>
+
+          <div class="room-location">
+            Halasuru, Bangalore • 3.6 km
+          </div>
+
+          <div class="room-rating">
+            ⭐ 4.3 <span>(4922 Ratings)</span>
+          </div>
+
+          <div class="room-amenities">
+            <span>Reception</span>
+            <span>Dining Area</span>
+            <span>Toiletries</span>
+            <span>+20 more</span>
+          </div>
+
+        </div>
+
+        <!-- PRICE BOX -->
+        <div class="room-price-box">
+          <div class="price">
+            ₹2442 <span>₹8984</span>
+          </div>
+          <div class="discount">72% off</div>
+
+          <%
+String user = (String) session.getAttribute("userName");
+%>
+
+<% if (user == null) { %>
+    <a href="<%=request.getContextPath()%>/jsp/user/login.jsp"
+       class="book-now-btn">
+       Login to Book
+    </a>
+<% } else { %>
+    <form action="<%=request.getContextPath()%>/bookRoom" method="post">
+        <input type="hidden" name="roomId" value="1">
+        <button type="submit" class="book-now-btn">
+            Book Now
+        </button>
+    </form>
+<% } %>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+
+</body>
+</html>

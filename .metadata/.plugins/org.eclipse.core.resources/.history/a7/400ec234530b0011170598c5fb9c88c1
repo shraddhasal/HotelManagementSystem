@@ -1,0 +1,352 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%
+    String userName = (String) session.getAttribute("userName");
+%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AtithiStay</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/home.css">
+
+    <!-- Font Awesome (instead of react-icons) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+<div id="root">
+
+<!-- ================= HERO WRAPPER ================= -->
+<div class="hero">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <h2 class="logo">AtithiStay</h2>
+
+        <ul>
+            <li onclick="scrollToSection('home')">Home</li>
+            <li onclick="scrollToSection('about')">About</li>
+            <li onclick="scrollToSection('rooms')">Our Rooms</li>
+            <li onclick="scrollToSection('facilities')">Facilities</li>
+            <li onclick="scrollToSection('gallery')">Gallery</li>
+            <li onclick="scrollToSection('contact')">Contact</li>
+             <%-- SHOW ONLY IF LOGGED IN --%>
+        <% if (userName != null) { %>
+            <li>My Bookings</li>
+        <% } %>
+        </ul>
+
+        <button class="nav-login-btn"
+                onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/login.jsp'">
+            Login
+        </button>
+    </nav>
+
+    <!-- ================= HERO CONTENT ================= -->
+    <div id="home" class="hero-content">
+        <div class="left">
+            <h1>Enjoy A Luxury Experience</h1>
+            <p>Experience comfort and elegance in the heart of the city.</p>
+            <button class="visit-btn">Visit Us</button>
+        </div>
+
+        <div class="booking-card">
+            <h2>Book A Room</h2>
+
+            <div class="date-row">
+                <div class="field">
+                    <label>Check In Date</label>
+                    <input type="date">
+                </div>
+                <div class="field">
+                    <label>Check Out Date</label>
+                    <input type="date">
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Adults</label>
+                <select>
+                    <option>Adults</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="field">
+                    <label>Child</label>
+                    <select>
+                        <option>Child</option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Room</label>
+                    <select>
+                        <option>Room</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="check-btn">CHECK AVAILABILITY</button>
+        </div>
+    </div>
+</div>
+<!-- ================= END HERO ================= -->
+
+<!-- ================= ROOMS ================= -->
+<section id="rooms" class="rooms">
+    <p class="rooms-tag">The pleasure of luxury</p>
+    <h2 class="rooms-heading">Rooms & Suites</h2>
+    <p class="rooms-subtext">
+        Proin consectetur non dolor vitae pulvinar. Pellentesque sollicitudin dolor eget neque viverra,
+        sed interdum metus interdum.
+    </p>
+
+    <div class="lux-rooms-grid">
+
+        <div class="lux-room-card">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+            <div class="lux-overlay">
+                <h3>Classic Balcony Room</h3>
+                <p>₹4,500 / Night</p>
+                <button>Book Now →</button>
+            </div>
+        </div>
+
+        <div class="lux-room-card">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+            <div class="lux-overlay">
+                <h3>Superior Double Room</h3>
+                <p>₹3,000 / Night</p>
+                <button>Book Now →</button>
+            </div>
+        </div>
+
+        <div class="lux-room-card">
+            <img src="https://images.unsplash.com/photo-1551776235-dde6d482980b">
+            <div class="lux-overlay">
+                <h3>Deluxe Double Room</h3>
+                <p>₹4,200 / Night</p>
+                <button>Book Now →</button>
+            </div>
+        </div>
+    </div>
+   <div class="view-all-wrapper">
+  <a href="<%=request.getContextPath()%>/jsp/user/rooms.jsp"
+     class="view-all-btn">
+    View All Rooms →
+  </a>
+</div>
+
+</section>
+
+<!-- ================= FACILITIES ================= -->
+<section id="facilities" class="explore">
+    <span class="explore-tag">Experience</span>
+    <h2 class="explore-heading">Our Hospitality</h2>
+
+    <div class="explore-grid">
+        <div class="explore-card">
+            <i class="fa-solid fa-bed explore-icon"></i>
+            <h3>Quality Room</h3>
+            <p>Comfortable, clean, and fully equipped rooms.</p>
+        </div>
+
+        <div class="explore-card">
+            <i class="fa-solid fa-umbrella-beach explore-icon"></i>
+            <h3>Private Beach</h3>
+            <p>Peaceful private beach with scenic views.</p>
+        </div>
+
+        <div class="explore-card">
+            <i class="fa-solid fa-hotel explore-icon"></i>
+            <h3>Best Accommodation</h3>
+            <p>Standard, deluxe, and luxury rooms.</p>
+        </div>
+
+        <div class="explore-card">
+            <i class="fa-solid fa-spa explore-icon"></i>
+            <h3>Wellness & Spa</h3>
+            <p>Relaxing spa and wellness treatments.</p>
+        </div>
+
+        <div class="explore-card">
+            <i class="fa-solid fa-utensils explore-icon"></i>
+            <h3>Restaurants & Bars</h3>
+            <p>Multi-cuisine dining experience.</p>
+        </div>
+
+        <div class="explore-card">
+            <i class="fa-solid fa-gift explore-icon"></i>
+            <h3>Special Offers</h3>
+            <p>Seasonal discounts and deals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= TESTIMONIAL SECTION ================= -->
+<section class="testimonials">
+
+  <p class="test-tag">Testimonials</p>
+  <h2 class="test-heading">What Our Guests Say</h2>
+
+  <div class="test-grid">
+
+    <!-- CARD 1 -->
+    <div class="test-card">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="user" />
+      <p>
+        “Amazing experience! The rooms were clean, service was excellent and the location is perfect.”
+      </p>
+      <h4>Priya Sharma</h4>
+      <span>Travel Blogger</span>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="test-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user" />
+      <p>
+        “Luxury at its best. Everything from check-in to checkout was smooth and comfortable.”
+      </p>
+      <h4>Rahul Verma</h4>
+      <span>Business Traveller</span>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="test-card">
+      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="user" />
+      <p>
+        “Beautiful ambience and great hospitality. I will definitely visit again with my family.”
+      </p>
+      <h4>Sneha Patil</h4>
+      <span>Guest</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="gallery">
+    <p class="gallery-tag">Our Gallery</p>
+    <h2 class="gallery-heading">Hotel Visual Tour</h2>
+
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd">
+            <div class="overlay">Luxury Room</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+            <div class="overlay">Reception</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
+            <div class="overlay">Dining Hall</div>
+        </div>
+        
+        <div class="gallery-item">
+  			<img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="Swimming Pool" />
+  			<div class="overlay">Swimming Pool</div>
+		</div>
+
+		<div class="gallery-item">
+  			<img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="Luxury Bedroom" />
+  			<div class="overlay">Luxury Bedroom</div>
+		</div>
+
+		<div class="gallery-item">
+  			<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427" alt="Resort View" />
+  			<div class="overlay">Resort View</div>
+		</div>
+        
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about">
+    <div class="about-container">
+        <div class="about-images">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+        </div>
+
+        <div class="about-content">
+            <span class="about-tag">About Us</span>
+            <h2>Welcome To AtithiStay</h2>
+            <p>We provide luxury, comfort, and world-class hospitality for every guest.</p>
+            <p>Whether business or leisure, your stay will be memorable.</p>
+            <button class="about-btn">Discover More</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h2 class="footer-logo">AtithiStay</h2>
+      <p>Luxury and comfort in the heart of the city.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li>Home</li>
+        <li>Rooms</li>
+        <li>Facilities</li>
+        <li>Gallery</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>Pune, Maharashtra</p>
+      <p>+91 98765 43210</p>
+      <p>support@atithistay.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 AtithiStay Hotel. All rights reserved.
+  </div>
+</footer>
+
+
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const yOffset = -70;
+    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>

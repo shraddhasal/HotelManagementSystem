@@ -1,0 +1,140 @@
+/* MAIN CONTAINER */
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* LEFT PANEL */
+.login-left {
+  width: 45%;
+  background: linear-gradient(
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.45)
+    ),
+    url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-left h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.login-left p {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 380px;
+  margin-bottom: 30px;
+}
+
+.view-btn {
+  width: 140px;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background: #ffffff;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* RIGHT PANEL */
+.login-right {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+}
+
+/* LOGIN CARD */
+.login-card {
+  width: 380px;
+  background: #fff;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* INPUTS */
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* OPTIONS */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.forgot {
+  color: #4a6cf7;
+  cursor: pointer;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background: #6f472d;
+}
+
+/* SIGNUP TEXT */
+.signup-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-text span {
+  color: #4a6cf7;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .login-right {
+    width: 100%;
+  }
+}

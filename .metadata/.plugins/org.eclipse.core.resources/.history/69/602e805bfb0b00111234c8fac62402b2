@@ -1,0 +1,106 @@
+@import url("./home.css");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f6f6f6;
+}
+
+.mybookings-page {
+    padding: 40px 80px;
+}
+
+/* HEADER */
+.mybookings-header {
+    margin-bottom: 30px;
+}
+
+.mybookings-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.mybookings-header p {
+    color: #777;
+    margin-top: 5px;
+}
+
+/* BOOKINGS */
+.bookings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.booking-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.booking-left h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.location {
+    color: #a0794c;
+    margin-bottom: 8px;
+}
+
+.booking-left p {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+/* RIGHT */
+.booking-right {
+    text-align: right;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* STATUS */
+.status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.confirmed {
+    background: #e0f6e9;
+    color: #1f9254;
+}
+
+.cancelled {
+    background: #fde2e2;
+    color: #b42318;
+}
+
+/* BUTTON */
+.cancel-btn {
+    background: #a0794c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.cancel-btn:hover {
+    background: #8c653a;
+}

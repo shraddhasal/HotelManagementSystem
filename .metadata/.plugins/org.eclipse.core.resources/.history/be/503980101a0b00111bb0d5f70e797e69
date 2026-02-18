@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+    String userName = (String) session.getAttribute("userName");
+%>
+
+<% if (userName != null) { %>
+    <p>Welcome, <b><%= userName %></b></p>
+<% } %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login | AtithiStay</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/Login.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <!-- LEFT SIDE -->
+    <div class="login-left">
+        <h1>Hello,<br>Welcome!</h1>
+        <p>
+            Login to manage your bookings, explore luxury rooms,
+            and experience premium hospitality with AtithiStay.
+        </p>
+        <button class="view-btn">View More</button>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="login-right">
+        <div class="login-card">
+            <h2>Login</h2>
+
+            <!-- FORM -->
+            <form action="<%=request.getContextPath()%>/login" method="post">
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email address"
+                    required
+                />
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                />
+
+                <div class="login-options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <span class="forgot">Forgot password?</span>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+            </form>
+
+            <p class="signup-text">
+                Not a member yet?
+                <a href="<%=request.getContextPath()%>/jsp/user/signup.jsp">
+                    Sign up
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

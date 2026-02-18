@@ -1,0 +1,84 @@
+/* ===== NAVBAR FIXED & STABLE ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 60px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.75)
+  );
+
+  color: #fff;
+}
+
+/* LOGO */
+.navbar .logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* NAV LINKS */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* HOVER (unchanged behavior) */
+.navbar li:hover {
+  background: #fff;
+  color: #8b5e3c;
+}
+
+/* RIGHT SIDE (USER + LOGOUT) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+}
+
+/* USER NAME */
+.welcome-text {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* LOGOUT BUTTON */
+.nav-login-btn {
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-login-btn:hover {
+  opacity: 0.9;
+}

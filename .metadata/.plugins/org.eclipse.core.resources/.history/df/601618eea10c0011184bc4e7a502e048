@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Recommendation</title>
+</head>
+<body>
+
+<h2>🤖 AI Recommendation</h2>
+
+<p><b>Your Query:</b> ${userQuery}</p>
+
+<h3>Best Room For You:</h3>
+<h2 style="color:#8b5e3c">${recommendation}</h2>
+
+<a href="<%=request.getContextPath()%>/jsp/user/rooms.jsp">
+    View Available Rooms
+</a>
+
+</body>
+</html>

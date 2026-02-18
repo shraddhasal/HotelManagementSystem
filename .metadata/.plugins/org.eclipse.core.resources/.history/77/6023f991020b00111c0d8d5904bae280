@@ -1,0 +1,204 @@
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  width: 100%;
+  height: 82vh;
+  background: url("https://images.unsplash.com/photo-1566073771259-6a8506099945")
+              no-repeat center center;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+
+/* Dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.6)
+  );
+}
+
+/* Navbar links */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar li {
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar li:hover {
+  background: white;
+  color: #8b5e3c;
+}
+
+/* Login button */
+.nav-login-btn {
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= HERO CONTENT ================= */
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.left {
+  width: 45%;
+}
+
+.left h1 {
+  font-size: 65px;
+  margin-bottom: 20px;
+}
+
+.left p {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* ================= BOOKING CARD ================= */
+.booking-card {
+  width: 380px;
+  background: #ffffff;
+  color: #333;
+  padding: 25px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.date-row, .row {
+  display: flex;
+  gap: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.field input,
+.field select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* ================= ROOMS ================= */
+.rooms {
+  background: #f5f0ea;
+  padding: 80px;
+  text-align: center;
+}
+
+/* ================= EXPLORE ================= */
+.explore {
+  background: #ffffff;
+  padding: 80px;
+  text-align: center;
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+  background: #f5f0ea;
+  padding: 90px 80px;
+  text-align: center;
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+  background: #ffffff;
+  padding: 90px 80px;
+  text-align: center;
+}
+
+/* ================= ABOUT ================= */
+.about {
+  background: #f5f0ea;
+  padding: 90px 80px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #1b1b1b;
+  color: #ccc;
+  padding-top: 70px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  background: #111;
+  font-size: 13px;
+}
