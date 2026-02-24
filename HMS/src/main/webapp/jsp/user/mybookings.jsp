@@ -1,20 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.util.*, com.hms.model.Booking" %>
+
 <%
     String userName = (String) session.getAttribute("userName");
     if (userName == null) {
         response.sendRedirect(request.getContextPath() + "/jsp/user/login.jsp");
         return;
     }
+
+    List<Booking> bookings = (List<Booking>) request.getAttribute("bookings");
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>My Bookings | AtithiStay</title>
-    
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/navbar.css">
-    
 
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/navbar.css">
+
+    <!-- My Bookings CSS (ONLY this, no home.css) -->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/mybookings.css">
 
     <!-- Poppins -->
@@ -24,6 +29,7 @@
 
 <body>
 
+<!-- NAVBAR -->
 <jsp:include page="/jsp/common/navbar.jsp" />
 
 <div class="mybookings-page">
@@ -35,42 +41,55 @@
 
     <div class="bookings-container">
 
-        <!-- BOOKING -->
+        <% if (bookings != null && !bookings.isEmpty()) {
+            for (Booking b : bookings) { %>
+
+        <!-- BOOKING CARD -->
         <div class="booking-card">
 
+            <!-- LEFT -->
             <div class="booking-left">
-                <h3>Deluxe Double Room</h3>
-                <p class="location">📍 Pune, Maharashtra</p>
-                <p>Check-in: <b>20 Feb 2026</b></p>
-                <p>Check-out: <b>22 Feb 2026</b></p>
-                <p>Guests: 2 Adults, 1 Child</p>
+                <h3><%= b.getRoomName() %></h3>
+                <p class="location">Room Type: <%= b.getRoomType() %></p>
+                <p>Check-in: <b><%= b.getCheckIn() %></b></p>
+                <p>Check-out: <b><%= b.getCheckOut() %></b></p>
+                <p>
+                    Guests:
+                    Adults <%= b.getAdults() %>,
+                    Child <%= b.getChild() %>
+                </p>
             </div>
 
+            <!-- RIGHT -->
             <div class="booking-right">
-                <span class="status confirmed">CONFIRMED</span>
-                <div class="price">₹ 8,400</div>
-                <button class="cancel-btn">Cancel Booking</button>
+
+                <!-- STATUS -->
+                <span class="status <%= b.getStatus() %>">
+                    <%= b.getStatus() %>
+                </span>
+
+                <!-- PRICE -->
+                <div class="price">₹ <%= b.getPrice() %></div>
+
+                <!-- CANCEL (ONLY IF PENDING) -->
+                <% if ("PENDING".equalsIgnoreCase(b.getStatus())) { %>
+                    <form action="<%=request.getContextPath()%>/user/cancel-booking" method="post">
+                        <input type="hidden" name="bookingId" value="<%= b.getId() %>">
+                        <button type="submit" class="cancel-btn">
+                            Cancel Booking
+                        </button>
+                    </form>
+                <% } %>
+
             </div>
 
         </div>
 
-        <!-- BOOKING -->
-        <div class="booking-card">
+        <% } } else { %>
 
-            <div class="booking-left">
-                <h3>Superior Balcony Room</h3>
-                <p class="location">📍 Mumbai</p>
-                <p>Check-in: <b>10 Mar 2026</b></p>
-                <p>Check-out: <b>12 Mar 2026</b></p>
-                <p>Guests: 2 Adults</p>
-            </div>
+        <p style="padding:20px;">You have no bookings yet.</p>
 
-            <div class="booking-right">
-                <span class="status cancelled">CANCELLED</span>
-                <div class="price">₹ 6,200</div>
-            </div>
-
-        </div>
+        <% } %>
 
     </div>
 </div>

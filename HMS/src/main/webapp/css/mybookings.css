@@ -66,9 +66,19 @@ body {
   font-weight: 600;
 }
 
-.confirmed { background: #e6f7ee; color: #1e8e5a; }
-.cancelled { background: #fdeaea; color: #c62828; }
+.status.CANCELLED {
+  background: #fdeaea;
+  color: #c62828;
+}
 
+.status.APPROVED {
+    color: #1e8e5a;
+}
+
+.status.PENDING {
+  background: #fff3cd;
+  color: #f39c12;
+}
 .cancel-btn {
   background: #a06b3c;
   color: white;

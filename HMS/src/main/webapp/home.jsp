@@ -40,7 +40,7 @@ String userName = (String) session.getAttribute("userName");
         <li onclick="scrollToSection('contact')">Contact</li>
 
         <% if (userName != null) { %>
-    <li onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/mybookings.jsp'">
+    <li onclick="window.location.href='<%=request.getContextPath()%>/user/my-bookings'">
         My Bookings
     </li>
 <% } %>
@@ -114,10 +114,12 @@ String userName = (String) session.getAttribute("userName");
                 <h3>Classic Balcony Room</h3>
                 <p>₹4,500 / Night</p>
                 <% if (userName != null) { %>
-    <button class="book-now-btn"
-        onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/booking.jsp'">
-        Book Now →
-    </button>
+    <form action="<%=request.getContextPath()%>/user/booking-details" method="get">
+        <input type="hidden" name="roomId" value="1">
+        <button type="submit" class="book-now-btn">
+            Book Now →
+        </button>
+    </form>
 <% } else { %>
     <button class="book-now-btn"
         onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/login.jsp'">
@@ -134,17 +136,18 @@ String userName = (String) session.getAttribute("userName");
                 <h3>Superior Double Room</h3>
                 <p>₹3,000 / Night</p>
                 <% if (userName != null) { %>
-    <button class="book-now-btn"
-        onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/booking.jsp'">
-        Book Now →
-    </button>
+    <form action="<%=request.getContextPath()%>/user/booking-details" method="get">
+        <input type="hidden" name="roomId" value="2">
+        <button type="submit" class="book-now-btn">
+            Book Now →
+        </button>
+    </form>
 <% } else { %>
     <button class="book-now-btn"
         onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/login.jsp'">
         Book Now →
     </button>
 <% } %>
-                
             </div>
         </div>
 
@@ -154,10 +157,12 @@ String userName = (String) session.getAttribute("userName");
                 <h3>Deluxe Double Room</h3>
                 <p>₹4,200 / Night</p>
                 <% if (userName != null) { %>
-    <button class="book-now-btn"
-        onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/booking.jsp'">
-        Book Now →
-    </button>
+    <form action="<%=request.getContextPath()%>/user/booking-details" method="get">
+        <input type="hidden" name="roomId" value="3">
+        <button type="submit" class="book-now-btn">
+            Book Now →
+        </button>
+    </form>
 <% } else { %>
     <button class="book-now-btn"
         onclick="window.location.href='<%=request.getContextPath()%>/jsp/user/login.jsp'">
@@ -169,8 +174,7 @@ String userName = (String) session.getAttribute("userName");
         </div>
     </div>
    <div class="view-all-wrapper">
-  <a href="<%=request.getContextPath()%>/jsp/user/rooms.jsp"
-     class="view-all-btn">
+  <a href="<%=request.getContextPath()%>/rooms" class="view-all-btn">
     View All Rooms →
   </a>
 </div>

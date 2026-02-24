@@ -274,3 +274,61 @@ body {
 .delete-btn:hover {
     text-decoration: underline;
 }
+
+/* =========================
+   VIEW USERS (ADMIN)
+========================= */
+
+/* Page title */
+.dashboard h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Users table */
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Header */
+.users-table th {
+    background: #f4f6f9;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+}
+
+/* Body */
+.users-table td {
+    padding: 14px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+/* Hover */
+.users-table tr:hover {
+    background: #fafafa;
+}
+
+/* Empty state */
+.users-table td[colspan] {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .users-table {
+        font-size: 13px;
+    }
+}

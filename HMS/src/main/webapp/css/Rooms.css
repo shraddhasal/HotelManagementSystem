@@ -1,4 +1,13 @@
+/* ===== GOOGLE FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* ===== GLOBAL FONT ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+}
 /* ================= HERO ================= */
+a {
+  text-decoration: none;
+}
 .rooms-layout {
   display: flex;
   align-items: flex-start;
@@ -66,18 +75,21 @@
   width: 100%;
   background: #8b5e3c;
   text-align: center;
-  padding: 18px 20px;
+  padding: 10px 20px;
 }
 
 .rooms-header h1 {
   color: #fff;
-  font-size: 32px;
+  font-size: 24px;  
   margin-bottom: 6px;
+  
 }
 
 .rooms-header p {
   color: #f2e6da;
-  font-size: 14px;
+  font-size: 13px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* ================= LOCATIONS ================= */
@@ -236,11 +248,22 @@
 }
 
 /* PRICE BOX */
+/*.room-price-box {
+  width: 200px;
+  border-left: 1px solid #eee;
+  padding: 18px;
+  text-align: right;
+}*/
+
 .room-price-box {
   width: 200px;
   border-left: 1px solid #eee;
   padding: 18px;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
 }
 
 .price {
@@ -262,21 +285,27 @@
   margin: 6px 0 12px;
 }
 
-/* BUTTON */
+/* BUTTON (LOGIN / BOOK) – MATCHES BROWN + GREEN THEME */
 .book-now-btn {
-  background: #1ab64f;
-  border: none;
+  background: #1ab64f;          /* Green CTA */
   color: #fff;
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #8b5e3c;    /* Brown border (theme match) */
+  transition: all 0.3s ease;
 }
 
 .book-now-btn:hover {
-  background: #149a41;
+  background: #8b5e3c;          /* Brown on hover */
+  color: #fff;
+  border-color: #8b5e3c;
 }
-
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .room-horizontal-card {
@@ -311,3 +340,4 @@
     padding: 16px 20px;
   }
 }
+
